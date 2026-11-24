@@ -1,0 +1,661 @@
+<!doctype html>
+<!-- Kendai design snapshot of "3 · The library" (https://claude.ai/artifact/TwNJSttz17PRff9saV6fr8), taken 2026-11-24.
+     Change the canvas, then re-run scripts/design-snapshot.mjs; don't edit this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · The library · Kendai design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&amp;family=Source+Sans+3:wght@400;600;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#625649}a:hover{color:#26211C}
+</style>
+</head>
+<body>
+<div style="width: 2568px; height: 1160px; box-sizing: border-box; padding: 56px 64px; background: #EAE2D5; color: #26211C; font-family: 'Source Sans 3', system-ui, sans-serif; display: flex; flex-direction: column; gap: 36px">
+
+<header style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 44px; height: 44px; border-radius: 6px; display: grid; place-items: center; background: #A9402B; color: #FFFFFF; font-family: 'Literata', serif; font-size: 20px; font-weight: 600">3</span><h1 style="margin: 0; font-family: 'Literata', serif; font-size: 40px; font-weight: 600; letter-spacing: -0.01em">The library</h1></div>
+<p style="margin: 0; max-width: 1100px; font-size: 16px; line-height: 1.55; color: #4C4238">The library opens on a home page, not one long list. Groups, folders, authors and series are other ways in, and search, filters and sorting narrow any of them. Nothing here moves a file.</p>
+</div>
+<a href="index.html" style="flex: none; font-size: 14px; font-weight: 600; text-decoration: none">← All workflows</a>
+</header>
+
+<div style="display: flex; gap: 56px; align-items: flex-start">
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+
+
+<div style="width: 360px; height: 60px; box-sizing: border-box; display: flex; align-items: center; gap: 0; padding: 0 4px 0 20px; background: #F5EFE4; color: #26211C; border-bottom: 0; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<h2 style="margin: 0; flex: 1; min-width: 0; font-family: 'Literata', serif; font-size: 26px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Library</h2>
+
+
+
+<button aria-label="Search" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16l4.5 4.5M17.5 11a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></button>
+
+
+<button aria-label="More options" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+</div>
+
+
+
+<div style="width: 360px; height: 46px; box-sizing: border-box; display: flex; gap: 8px; padding: 2px 20px 10px; overflow: hidden; white-space: nowrap; background: #F5EFE4; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 14px; font-weight: 600">
+<span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Home</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Groups</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Folders</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Authors</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Series</span>
+</div>
+
+<div style="flex: 1; overflow: hidden; padding: 6px 20px 0; display: flex; flex-direction: column; gap: 22px">
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h3 style="margin: 0; font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Continue reading</h3><a href="#" style="font-size: 14px; font-weight: 600; color: #A9402B; text-decoration: none">See all</a></div>
+<div style="display: flex; gap: 14px">
+
+
+<div style="width: 96px; display: flex; flex-direction: column; gap: 6px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+
+<span style="width: 96px; height: 144px; box-sizing: border-box; border-radius: 3px; background: #2F3E56; color: #F5EFE4; border: 0; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Literata', serif; box-shadow: 0 3px 8px rgba(38, 33, 28, 0.2)"><span style="font-size: 15px; font-weight: 600; line-height: 1.15">Moby-Dick</span><span style="font-size: 10px; opacity: 0.85">Herman Melville</span></span>
+<span style="font-size: 13px; font-weight: 600; line-height: 1.25">Moby-Dick</span>
+<div style="height: 1px; background: #DCD2C2; position: relative"><div style="position: absolute; left: 0; top: -1px; width: 34%; height: 3px; background: #A9402B"></div></div>
+<span style="font-size: 12px; color: #625649">Page 3 · 1%</span>
+</div>
+
+
+
+<div style="width: 96px; display: flex; flex-direction: column; gap: 6px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 96px; height: 144px; box-sizing: border-box; border-radius: 3px; background: #FBF7F0; border: 1px solid #DCD2C2; padding: 10px 8px; font-family: 'IBM Plex Mono', monospace; font-size: 7.4px; line-height: 1.4; white-space: pre; overflow: hidden; box-shadow: 0 3px 8px rgba(38, 33, 28, 0.2)"></span>
+
+
+<span style="font-size: 13px; font-weight: 600; line-height: 1.25">Starfall Tactics walkthrough</span>
+<div style="height: 1px; background: #DCD2C2; position: relative"><div style="position: absolute; left: 0; top: -1px; width: 34%; height: 3px; background: #A9402B"></div></div>
+<span style="font-size: 12px; color: #625649">61%</span>
+</div>
+
+
+
+<div style="width: 96px; display: flex; flex-direction: column; gap: 6px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+
+<span style="width: 96px; height: 144px; box-sizing: border-box; border-radius: 3px; background: #8E2F22; color: #F7E7C6; border: 0; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Source Sans 3', sans-serif; box-shadow: 0 3px 8px rgba(38, 33, 28, 0.2)"><span style="font-size: 15px; font-weight: 700; line-height: 1.15">Little Nemo in Slumberland</span><span style="font-size: 10px; opacity: 0.85">Winsor McCay</span></span>
+<span style="font-size: 13px; font-weight: 600; line-height: 1.25">Little Nemo, vol. 1</span>
+<div style="height: 1px; background: #DCD2C2; position: relative"><div style="position: absolute; left: 0; top: -1px; width: 34%; height: 3px; background: #A9402B"></div></div>
+<span style="font-size: 12px; color: #625649">Page 38 · 40%</span>
+</div>
+
+</div>
+</section>
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Pinned groups</h3>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+
+
+<div style="width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #DCD2C2; border-radius: 8px; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px">
+<span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #E6DCC9; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #4F5D73; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #B5893C; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #E6DCC9; border: 0"></span>
+</div>
+<span style="display: flex; align-items: flex-start; gap: 6px">
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Games</span><span style="font-size: 13px; color: #625649">3 groups · 22 guides</span></span>
+
+</span>
+</div>
+
+
+
+<div style="width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #DCD2C2; border-radius: 8px; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px">
+<span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #B5893C; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #5E6B4E; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #2F3E56; border: 0"></span><span style="height: 42px; box-sizing: border-box; border-radius: 2px; background: #8E2F22; border: 0"></span>
+</div>
+<span style="display: flex; align-items: flex-start; gap: 6px">
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Japanese classics</span><span style="font-size: 13px; color: #625649">14 books</span></span>
+
+</span>
+</div>
+
+</div>
+</section>
+<section style="display: flex; flex-direction: column">
+<h3 style="margin: 0 0 4px; font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Recently added</h3>
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #B5893C; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Kokoro</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Natsume Sōseki · EPUB · NAS</span>
+
+</span>
+<button aria-label="More for Kokoro" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #FBF7F0; border: 1px solid #DCD2C2"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Router manual</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">PDF · 4.2 MB · Download</span>
+
+</span>
+<button aria-label="More for Router manual" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+</section>
+</div>
+
+
+<nav style="width: 360px; height: 76px; box-sizing: border-box; display: flex; justify-content: space-around; align-items: center; background: #F5EFE4; border-top: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #26211C; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 700; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h6a2.5 2.5 0 0 1 2.5 2.5v11.5a2 2 0 0 0-2-2H3.5zM20.5 5.5h-6A2.5 2.5 0 0 0 12 8v11.5a2 2 0 0 1 2-2h6.5z"/></svg>
+<span style="border-bottom: 2px solid #A9402B; padding-bottom: 1px">Library</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10M8 10l4 4 4-4M5 19.5h14"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Jobs</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M16 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 15a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Settings</span>
+
+</button>
+
+</nav>
+
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.1  Home</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">Continue reading first, then pinned groups and what's new. Every cover shows how far through it you are.</span></figcaption>
+</figure>
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+
+
+<div style="width: 360px; height: 60px; box-sizing: border-box; display: flex; align-items: center; gap: 0; padding: 0 4px; background: #F5EFE4; color: #26211C; border-bottom: 0; font-family: 'Source Sans 3', system-ui, sans-serif">
+<button aria-label="Back" style="width: 44px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; padding-left: 4px"><span style="font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Games</span><span style="font-size: 12px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Groups</span></span>
+
+
+<button aria-label="New group" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+
+
+<button aria-label="More options" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+</div>
+
+<div style="flex: none; padding: 4px 20px 10px; font-size: 13px; color: #625649">Groups <span aria-hidden="true">›</span> <strong style="color: #26211C">Games</strong></div>
+<div style="flex: 1; overflow: hidden; padding: 0 20px; display: flex; flex-direction: column">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #625649; padding: 8px 0 4px">Groups inside</span>
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Starfall Tactics</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">9 guides · 2 reading</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Hollow Crown</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">7 guides</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Tidewater</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">6 guides · 1 finished</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #625649; padding: 18px 0 4px">In Games</span>
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #FBF7F0; border: 1px solid #DCD2C2"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Retro handheld manual</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">PDF · 12 MB · NAS</span>
+
+</span>
+<button aria-label="More for Retro handheld manual" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #E6DCC9; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Speedrun notes</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Markdown · 18 KB · Device</span>
+
+</span>
+<button aria-label="More for Speedrun notes" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+</div>
+
+
+<nav style="width: 360px; height: 76px; box-sizing: border-box; display: flex; justify-content: space-around; align-items: center; background: #F5EFE4; border-top: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #26211C; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 700; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h6a2.5 2.5 0 0 1 2.5 2.5v11.5a2 2 0 0 0-2-2H3.5zM20.5 5.5h-6A2.5 2.5 0 0 0 12 8v11.5a2 2 0 0 1 2-2h6.5z"/></svg>
+<span style="border-bottom: 2px solid #A9402B; padding-bottom: 1px">Library</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10M8 10l4 4 4-4M5 19.5h14"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Jobs</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M16 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 15a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Settings</span>
+
+</button>
+
+</nav>
+
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.2  Inside a group</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">A group opens like a folder: its groups first, then its own books, from the device and servers alike. Nothing moves.</span></figcaption>
+</figure>
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+
+
+<div style="width: 360px; height: 60px; box-sizing: border-box; display: flex; align-items: center; gap: 0; padding: 0 4px 0 20px; background: #F5EFE4; color: #26211C; border-bottom: 0; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<h2 style="margin: 0; flex: 1; min-width: 0; font-family: 'Literata', serif; font-size: 26px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Library</h2>
+
+
+
+<button aria-label="Search" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16l4.5 4.5M17.5 11a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></button>
+
+
+<button aria-label="More options" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+</div>
+
+
+
+<div style="width: 360px; height: 46px; box-sizing: border-box; display: flex; gap: 8px; padding: 2px 20px 10px; overflow: hidden; white-space: nowrap; background: #F5EFE4; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 14px; font-weight: 600">
+<span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Home</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Groups</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Folders</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Authors</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Series</span>
+</div>
+
+<div style="flex: none; display: flex; gap: 20px; padding: 4px 20px 0; border-bottom: 1px solid #DCD2C2; font-size: 15px; font-weight: 600">
+<span style="padding: 8px 0 10px; color: #26211C; border-bottom: 2px solid #A9402B">Device</span>
+<span style="padding: 8px 0 10px; color: #625649">NAS</span>
+<span style="padding: 8px 0 10px; color: #625649">Seedbox</span>
+</div>
+<div style="flex: none; padding: 12px 20px 4px; font-size: 13px; color: #625649">Device <span aria-hidden="true">›</span> <strong style="color: #26211C">Books</strong> <span style="float: right">5 folders · 42 books</span></div>
+<div style="flex: 1; overflow: hidden; padding: 0 20px; display: flex; flex-direction: column">
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Classics</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">18 books</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Comics</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">12 comics</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+<span style="width: 36px; height: 36px; flex: none; border-radius: 6px; background: #FBF7F0; border: 1px solid #DCD2C2; color: #A9402B; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5a2 2 0 0 1 2-2h3.6l2.2 2.4h7.2a2 2 0 0 1 2 2v7.6a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></span>
+
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Guides</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">9 guides</span>
+
+</span>
+
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#625649" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"/></svg>
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #5E6B4E; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Pride and Prejudice</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Jane Austen · EPUB · 520 KB</span>
+
+</span>
+<button aria-label="More for Pride and Prejudice" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #8E2F22; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Tale of Genji</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Murasaki Shikibu · EPUB · 2.1 MB</span>
+
+</span>
+<button aria-label="More for The Tale of Genji" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+</div>
+
+
+<nav style="width: 360px; height: 76px; box-sizing: border-box; display: flex; justify-content: space-around; align-items: center; background: #F5EFE4; border-top: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #26211C; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 700; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h6a2.5 2.5 0 0 1 2.5 2.5v11.5a2 2 0 0 0-2-2H3.5zM20.5 5.5h-6A2.5 2.5 0 0 0 12 8v11.5a2 2 0 0 1 2-2h6.5z"/></svg>
+<span style="border-bottom: 2px solid #A9402B; padding-bottom: 1px">Library</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10M8 10l4 4 4-4M5 19.5h14"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Jobs</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M16 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 15a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Settings</span>
+
+</button>
+
+</nav>
+
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.3  Folders</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">The real folders on the device and each server, showing only books and the folders that hold them.</span></figcaption>
+</figure>
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+
+
+<div style="width: 360px; height: 60px; box-sizing: border-box; display: flex; align-items: center; gap: 0; padding: 0 4px 0 20px; background: #F5EFE4; color: #26211C; border-bottom: 0; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<h2 style="margin: 0; flex: 1; min-width: 0; font-family: 'Literata', serif; font-size: 26px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Library</h2>
+
+
+
+<button aria-label="Search" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16l4.5 4.5M17.5 11a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></button>
+
+
+<button aria-label="More options" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+</div>
+
+
+
+<div style="width: 360px; height: 46px; box-sizing: border-box; display: flex; gap: 8px; padding: 2px 20px 10px; overflow: hidden; white-space: nowrap; background: #F5EFE4; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 14px; font-weight: 600">
+<span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Home</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Groups</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Folders</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Authors</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Series</span>
+</div>
+
+<div style="flex: 1; overflow: hidden; padding: 4px 20px 0; display: flex; flex-direction: column">
+<div style="display: flex; gap: 12px; padding: 10px 0 14px; border-bottom: 1px solid #DCD2C2">
+<span style="position: relative; width: 70px; height: 92px; flex: none"><span style="position: absolute; left: 14px; top: 0; width: 52px; height: 78px; border-radius: 2px; background: #4F5D73"></span><span style="position: absolute; left: 7px; top: 6px; width: 52px; height: 78px; border-radius: 2px; background: #6B4E3D"></span><span style="position: absolute; left: 0; top: 12px; width: 52px; height: 78px; border-radius: 2px; background: #2F3E56; box-shadow: 0 2px 6px rgba(38, 33, 28, 0.2)"></span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Sherlock Holmes</span><span style="font-size: 13px; color: #625649">Arthur Conan Doyle · 9 books</span><span style="font-size: 13px; color: #625649">4 finished · reading <strong style="color: #26211C">5. The Hound of the Baskervilles</strong></span><span style="margin-top: 4px; height: 1px; background: #DCD2C2; position: relative; display: block"><span style="position: absolute; left: 0; top: -1px; width: 48%; height: 3px; background: #A9402B; display: block"></span></span></span>
+</div>
+<div style="display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #DCD2C2">
+<span style="position: relative; width: 70px; height: 92px; flex: none"><span style="position: absolute; left: 14px; top: 0; width: 52px; height: 78px; border-radius: 2px; background: #C77D4A"></span><span style="position: absolute; left: 7px; top: 6px; width: 52px; height: 78px; border-radius: 2px; background: #A9402B"></span><span style="position: absolute; left: 0; top: 12px; width: 52px; height: 78px; border-radius: 2px; background: #8E2F22; box-shadow: 0 2px 6px rgba(38, 33, 28, 0.2)"></span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Little Nemo</span><span style="font-size: 13px; color: #625649">Winsor McCay · 3 volumes</span><span style="font-size: 13px; color: #625649">reading <strong style="color: #26211C">1. Little Nemo in Slumberland</strong></span><span style="margin-top: 4px; height: 1px; background: #DCD2C2; position: relative; display: block"><span style="position: absolute; left: 0; top: -1px; width: 13%; height: 3px; background: #A9402B; display: block"></span></span></span>
+</div>
+<div style="display: flex; gap: 12px; padding: 14px 0">
+<span style="position: relative; width: 70px; height: 92px; flex: none"><span style="position: absolute; left: 14px; top: 0; width: 52px; height: 78px; border-radius: 2px; background: #E6DCC9"></span><span style="position: absolute; left: 7px; top: 6px; width: 52px; height: 78px; border-radius: 2px; background: #D7CBB6"></span><span style="position: absolute; left: 0; top: 12px; width: 52px; height: 78px; border-radius: 2px; background: #FBF7F0; border: 1px solid #DCD2C2; box-sizing: border-box"></span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Literata', serif; font-size: 18px; font-weight: 600">Starfall Tactics</span><span style="font-size: 13px; color: #625649">Guides · 9 parts</span><span style="font-size: 13px; color: #625649">2 finished · not started 6</span><span style="margin-top: 4px; height: 1px; background: #DCD2C2; position: relative; display: block"><span style="position: absolute; left: 0; top: -1px; width: 28%; height: 3px; background: #A9402B; display: block"></span></span></span>
+</div>
+</div>
+
+
+<nav style="width: 360px; height: 76px; box-sizing: border-box; display: flex; justify-content: space-around; align-items: center; background: #F5EFE4; border-top: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #26211C; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 700; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h6a2.5 2.5 0 0 1 2.5 2.5v11.5a2 2 0 0 0-2-2H3.5zM20.5 5.5h-6A2.5 2.5 0 0 0 12 8v11.5a2 2 0 0 1 2-2h6.5z"/></svg>
+<span style="border-bottom: 2px solid #A9402B; padding-bottom: 1px">Library</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10M8 10l4 4 4-4M5 19.5h14"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Jobs</span>
+
+</button>
+
+<button style="width: 96px; height: 60px; padding: 0; border: 0; background: none; color: #625649; display: flex; flex-direction: column; align-items: center; gap: 4px; font-family: inherit; font-size: 13px; font-weight: 600; position: relative">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M16 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 15a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+<span style="border-bottom: 2px solid transparent; padding-bottom: 1px">Settings</span>
+
+</button>
+
+</nav>
+
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.4  Series</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">Series in reading order, from each book's own details, with how far through the series you are and what's next.</span></figcaption>
+</figure>
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+<div style="height: 60px; flex: none; display: flex; align-items: center; gap: 4px; padding: 0 12px 0 4px">
+<button aria-label="Back" style="width: 44px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+<label style="flex: 1; height: 44px; box-sizing: border-box; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid #A9402B; border-radius: 8px; background: #FBF7F0"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden">Search the library</span><input value="holmes" style="flex: 1; min-width: 0; border: 0; background: none; outline: none; font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #26211C"><button aria-label="Clear the search" style="width: 32px; height: 32px; flex: none; padding: 0; border: 0; background: none; color: #625649; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></label>
+</div>
+<div style="flex: none; display: flex; gap: 8px; padding: 2px 20px 12px; overflow: hidden; white-space: nowrap; font-size: 14px; font-weight: 600">
+<span style="padding: 5px 10px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Books ✓</span>
+<span style="padding: 5px 10px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Not finished ✓</span>
+<span style="padding: 5px 10px; border-radius: 8px; border: 1px solid #DCD2C2; color: #625649">Anywhere ▾</span>
+<span style="padding: 5px 10px; border-radius: 8px; border: 1px solid #DCD2C2; color: #625649">Any format ▾</span>
+</div>
+<div style="flex: none; padding: 4px 20px 6px; display: flex; justify-content: space-between; font-size: 13px; color: #625649"><span><strong style="color: #26211C">5 books</strong> match</span><span>Sorted by title</span></div>
+<div style="flex: 1; overflow: hidden; padding: 0 20px; display: flex; flex-direction: column">
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #2F3E56; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Adventures of Sherlock Holmes</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Arthur Conan Doyle · EPUB · NAS</span>
+
+</span>
+<button aria-label="More for The Adventures of Sherlock Holmes" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #6B4E3D; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Hound of the Baskervilles</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Arthur Conan Doyle · EPUB · Device</span>
+
+</span>
+<button aria-label="More for The Hound of the Baskervilles" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #4F5D73; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Memoirs of Sherlock Holmes</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Arthur Conan Doyle · MOBI · NAS</span>
+
+</span>
+<button aria-label="More for The Memoirs of Sherlock Holmes" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #5E6B4E; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Return of Sherlock Holmes</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Arthur Conan Doyle · EPUB · NAS</span>
+
+</span>
+<button aria-label="More for The Return of Sherlock Holmes" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+
+
+<div style="width: 100%; min-height: 70px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #DCD2C2; font-family: 'Source Sans 3', system-ui, sans-serif; color: #26211C">
+
+<span style="width: 36px; height: 54px; flex: none; box-sizing: border-box; border-radius: 2px; background: #8E2F22; border: 0"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">The Valley of Fear</span>
+<span style="font-size: 13px; color: #625649; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Arthur Conan Doyle · FB2 · Device</span>
+
+</span>
+<button aria-label="More for The Valley of Fear" style="width: 40px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+
+</div>
+
+</div>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.5  Search and filters</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">Search titles, authors and series as you type. Filters for kind, status, place and format combine, and say how many match.</span></figcaption>
+</figure>
+
+<figure style="margin: 0; width: 360px; display: flex; flex-direction: column; gap: 14px">
+<div style="width: 360px; height: 780px; box-sizing: border-box; border-radius: 36px; overflow: hidden; display: flex; flex-direction: column; position: relative; background: #F5EFE4; color: #26211C; box-shadow: 0 30px 60px rgba(60, 40, 20, 0.16), 0 0 0 1px rgba(60, 40, 20, 0.08)">
+<div style="height: 28px; flex: none"></div>
+
+
+<div style="width: 360px; height: 60px; box-sizing: border-box; display: flex; align-items: center; gap: 0; padding: 0 4px 0 20px; background: #F5EFE4; color: #26211C; border-bottom: 0; font-family: 'Source Sans 3', system-ui, sans-serif">
+
+<h2 style="margin: 0; flex: 1; min-width: 0; font-family: 'Literata', serif; font-size: 26px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Library</h2>
+
+
+
+<button aria-label="Search" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16l4.5 4.5M17.5 11a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></button>
+
+
+<button aria-label="More options" style="width: 42px; height: 44px; flex: none; padding: 0; border: 0; background: none; color: inherit; display: grid; place-items: center"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" stroke="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.3a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 10.6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 16.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></button>
+
+</div>
+
+
+
+<div style="width: 360px; height: 46px; box-sizing: border-box; display: flex; gap: 8px; padding: 2px 20px 10px; overflow: hidden; white-space: nowrap; background: #F5EFE4; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 14px; font-weight: 600">
+<span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Home</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #26211C; background: #26211C; color: #F5EFE4">Groups</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Folders</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Authors</span><span style="flex: none; padding: 5px 11px; border-radius: 8px; border: 1px solid #DCD2C2; background: transparent; color: #625649">Series</span>
+</div>
+
+<div style="flex: 1; padding: 6px 20px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-content: start">
+<span style="height: 138px; border-radius: 3px; background: #2F3E56"></span><span style="height: 138px; border-radius: 3px; background: #B5893C"></span><span style="height: 138px; border-radius: 3px; background: #5E6B4E"></span>
+<span style="height: 138px; border-radius: 3px; background: #8E2F22"></span><span style="height: 138px; border-radius: 3px; background: #E6DCC9"></span><span style="height: 138px; border-radius: 3px; background: #4F5D73"></span>
+</div>
+<div style="position: absolute; inset: 0; background: rgba(38, 33, 28, 0.38)"></div>
+<div role="dialog" aria-label="Sort and view" style="position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 10px 20px 24px; border-radius: 16px 16px 0 0; background: #FBF7F0; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: center; width: 36px; height: 4px; border-radius: 2px; background: #DCD2C2"></span>
+<h2 style="margin: 0; font-family: 'Literata', serif; font-size: 20px; font-weight: 600">Sort and view</h2>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #625649; padding-bottom: 4px">Sort by</span>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px; font-weight: 700; color: #A9402B">Last read<input type="radio" name="sort" checked style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px">Title<input type="radio" name="sort" style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px">Author<input type="radio" name="sort" style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px">Date added<input type="radio" name="sort" style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px">Progress<input type="radio" name="sort" style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #625649">View</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid #26211C; border-radius: 8px; overflow: hidden; font-size: 15px; font-weight: 700">
+<button style="height: 44px; border: 0; background: #26211C; color: #F5EFE4; font-family: inherit; font-size: inherit; font-weight: inherit">Covers</button>
+<button style="height: 44px; border: 0; background: none; color: #26211C; font-family: inherit; font-size: inherit; font-weight: inherit">List</button>
+</div>
+</div>
+<label style="height: 44px; display: flex; align-items: center; justify-content: space-between; font-size: 16px">Show finished books<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #A9402B"></label>
+</div>
+</div>
+<figcaption style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 700; color: #A9402B">3.6  Sort and view</span><span style="font-size: 15px; line-height: 1.5; color: #4C4238">Each view keeps its own sort and its covers or list, chosen from the bar's menu.</span></figcaption>
+</figure>
+
+</div>
+</div>
+</body>
+</html>

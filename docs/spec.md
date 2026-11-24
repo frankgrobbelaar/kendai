@@ -1,8 +1,7 @@
 # Spec
 
-What kendai does and what it leaves out. How it looks will be in design.md once the owner has
-picked a design language, how it's built is in [architecture.md](architecture.md), and what was
-decided is in [CLAUDE.md](../CLAUDE.md).
+What kendai does and what it leaves out. How it looks is in [design.md](design.md), how it's built
+is in [architecture.md](architecture.md), and what was decided is in [CLAUDE.md](../CLAUDE.md).
 
 ## The idea
 
