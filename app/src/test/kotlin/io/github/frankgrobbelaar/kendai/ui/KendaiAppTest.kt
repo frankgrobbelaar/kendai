@@ -8,6 +8,7 @@ import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isSelectable
 import androidx.compose.ui.test.junit4.v2.createComposeRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -33,7 +34,7 @@ class KendaiAppTest {
 
         compose.onNodeWithTag(NAVIGATION_BAR).assertExists()
         compose.onNodeWithTag(NAVIGATION_RAIL).assertDoesNotExist()
-        compose.onNodeWithText("Your library is empty").assertExists()
+        compose.waitForText("Your library is empty")
 
         place("Jobs").performClick()
         place("Jobs").assertIsSelected()
@@ -55,6 +56,23 @@ class KendaiAppTest {
 
         place("Jobs").assertIsSelected()
         compose.onNodeWithText("Nothing running").assertExists()
+    }
+
+    @Test
+    @Config(qualifiers = "w360dp-h780dp")
+    fun `an empty library leads to its folders in Settings, which have the screen to themselves`() {
+        compose.setContent { KendaiTheme { KendaiApp() } }
+
+        compose.waitForText("Choose folders")
+        compose.onNodeWithText("Choose folders").performClick()
+
+        compose.onNodeWithText("Library folders").assertExists()
+        compose.onNodeWithTag(NAVIGATION_BAR).assertDoesNotExist()
+
+        compose.onNodeWithContentDescription("Back").performClick()
+
+        compose.onNodeWithText("E-ink mode").assertExists()
+        place("Settings").assertIsSelected()
     }
 
     @Test

@@ -7,6 +7,7 @@ import io.github.frankgrobbelaar.kendai.MemoryStore
 import io.github.frankgrobbelaar.kendai.Theme
 import io.github.frankgrobbelaar.kendai.ui.settings.SettingsViewModel
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -21,6 +22,7 @@ class SettingsViewModelTest {
     private fun viewModel(einkScreen: Boolean) =
         SettingsViewModel(
             settings = KendaiSettings(MemoryStore()),
+            folders = flowOf(listOf("/storage/emulated/0/Books", "/storage/emulated/0/Download")),
             einkScreen = einkScreen,
             dynamicColorAvailable = true,
             version = "0.1.0",
@@ -50,5 +52,6 @@ class SettingsViewModelTest {
         val state = settings.state.first { it.choices.theme == Theme.Dark }
         assertTrue(state.einkOn)
         assertEquals("0.1.0", state.version)
+        assertEquals(2, state.folders)
     }
 }

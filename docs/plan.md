@@ -14,7 +14,7 @@ lands on `main`:
 | --- | --- | --- | --- |
 | 0 | Design | Three design languages to choose from, then the chosen one and every workflow on the design canvas | Done: Washi, the kit and all twelve workflows, in [design.md](design.md) and [design/](design/README.md) |
 | 1 | Foundation | The Gradle project, linting and formatting, CI, the theme, and the app shell, with phone, tablet and e-ink layouts | Done |
-| 2 | The library on the device | All files access, picking folders, finding books, their details and covers, the home page, list and grid | |
+| 2 | The library on the device | All files access, picking folders, finding books, their details and covers, the home page, list and grid | Done: the first run, Home and Folders, Settings › Library folders, and Navigation 3 |
 | 3 | Reading EPUB | Readium, the place saved as you read, contents, appearance, pages or scrolling | |
 | 4 | PDF and comics | PDFium with zoom, fit and spreads; CBZ, CBR, CB7 and CBT | |
 | 5 | Releases and updates | The `release` branch and its workflow, signing, the downloads page, and the in-app update | |
@@ -34,4 +34,11 @@ from then on.
 
 ## Left for later
 
-Nothing yet.
+- **Choosing folders inside kendai.** "Add another folder" uses Android's folder picker, which
+  won't pick the Download folder itself or the top of the storage. Iteration 8 builds a folder
+  chooser for servers; the device can use it too.
+- **Recently added's See all**, and Home's card offering to add a server: iterations 9 and 8.
+- **Undo** after removing a library folder, with the Kit's snackbar, when Manage books brings Undo
+  in iteration 10. Adding the folder again brings its books back meanwhile.
+- **E-ink, the rest of the way:** Material's own motion (the sort sheet rising, pull to refresh)
+  still moves, and icons keep their 1.6 dp lines instead of 2. Iteration 13.

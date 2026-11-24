@@ -1,9 +1,7 @@
 package io.github.frankgrobbelaar.kendai.ui.settings
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,10 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.selectable
-import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
@@ -23,23 +20,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.heading
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.frankgrobbelaar.kendai.EinkMode
 import io.github.frankgrobbelaar.kendai.R
 import io.github.frankgrobbelaar.kendai.Theme
+import io.github.frankgrobbelaar.kendai.ui.kit.KendaiIcons
 import io.github.frankgrobbelaar.kendai.ui.kit.KendaiTopBar
-import io.github.frankgrobbelaar.kendai.ui.theme.Washi
-import io.github.frankgrobbelaar.kendai.ui.theme.WashiCorners
+import io.github.frankgrobbelaar.kendai.ui.kit.Overline
+import io.github.frankgrobbelaar.kendai.ui.kit.Segmented
 
 @Composable
 fun SettingsRoute(
+    onLibraryFolders: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: SettingsViewModel = viewModel(factory = SettingsViewModel.Factory),
 ) {
@@ -49,22 +46,27 @@ fun SettingsRoute(
         onTheme = viewModel::setTheme,
         onDynamicColor = viewModel::setDynamicColor,
         onEinkMode = viewModel::setEinkMode,
+        onLibraryFolders = onLibraryFolders,
         modifier = modifier,
     )
 }
 
-/** Settings: how kendai looks, and its version. More sections join as their features land. */
+/**
+ * Settings: how kendai looks, the library's folders, and its version. More sections join as their
+ * features land.
+ */
 @Composable
 fun SettingsScreen(
     state: SettingsUiState,
     onTheme: (Theme) -> Unit,
     onDynamicColor: (Boolean) -> Unit,
     onEinkMode: (EinkMode) -> Unit,
+    onLibraryFolders: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         KendaiTopBar(title = stringResource(R.string.nav_settings))
-        Overline(stringResource(R.string.settings_appearance))
+        Overline(stringResource(R.string.settings_appearance), SECTION)
         ThemeSetting(theme = state.choices.theme, onTheme = onTheme)
         // E-ink mode is black and white, so the wallpaper's colours have nothing to change there.
         if (state.dynamicColorAvailable && !state.einkOn) {
@@ -80,7 +82,13 @@ fun SettingsScreen(
             einkScreen = state.einkScreen,
             onEinkMode = onEinkMode,
         )
-        Overline(stringResource(R.string.settings_about))
+        Overline(stringResource(R.string.settings_library), SECTION)
+        LinkSetting(
+            label = stringResource(R.string.settings_folders),
+            value = state.folders.toString(),
+            onClick = onLibraryFolders,
+        )
+        Overline(stringResource(R.string.settings_about), SECTION)
         Row(
             modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
@@ -151,20 +159,6 @@ private fun EinkSetting(
     }
 }
 
-/** A section's name: small, tracked capitals in ink 2. */
-@Composable
-private fun Overline(text: String, modifier: Modifier = Modifier) {
-    Text(
-        text = text.uppercase(),
-        style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier =
-            modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 6.dp).semantics {
-                heading()
-            },
-    )
-}
-
 /** A setting: its name, a line on what it does if it needs one, then its control. */
 @Composable
 private fun Setting(
@@ -186,6 +180,39 @@ private fun Setting(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
+    }
+}
+
+/** A setting with a page of its own: its name, what it's set to, and a chevron. */
+@Composable
+private fun LinkSetting(
+    label: String,
+    value: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val colors = MaterialTheme.colorScheme
+    Row(
+        modifier =
+            modifier
+                .fillMaxWidth()
+                .clickable(onClick = onClick)
+                .heightIn(min = 56.dp)
+                .padding(start = 20.dp, end = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.weight(1f),
+        )
+        Text(
+            text = value,
+            style = MaterialTheme.typography.bodyMedium.copy(fontSize = 14.sp),
+            color = colors.onSurfaceVariant,
+        )
+        Icon(KendaiIcons.Chevron, contentDescription = null, tint = colors.onSurfaceVariant)
     }
 }
 
@@ -231,47 +258,5 @@ private fun SwitchSetting(
     }
 }
 
-/**
- * One choice of a few, side by side, as on the design's sort sheet: the chosen one in ink, the rest
- * on paper, inside an ink border.
- */
-@Composable
-private fun Segmented(
-    count: Int,
-    label: (Int) -> String,
-    selected: Int,
-    onSelect: (Int) -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    val colors = MaterialTheme.colorScheme
-    Row(
-        modifier =
-            modifier
-                .fillMaxWidth()
-                .clip(WashiCorners.Button)
-                .border(Washi.ruleWidth, colors.onSurface, WashiCorners.Button)
-                .selectableGroup()
-    ) {
-        repeat(count) { index ->
-            val on = index == selected
-            Box(
-                modifier =
-                    Modifier.weight(1f)
-                        .heightIn(min = 44.dp)
-                        .background(if (on) colors.onSurface else colors.surface)
-                        .selectable(
-                            selected = on,
-                            role = Role.RadioButton,
-                            onClick = { onSelect(index) },
-                        ),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    text = label(index),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = if (on) colors.surface else colors.onSurface,
-                )
-            }
-        }
-    }
-}
+/** Room around a section's name. */
+private val SECTION = Modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 6.dp)

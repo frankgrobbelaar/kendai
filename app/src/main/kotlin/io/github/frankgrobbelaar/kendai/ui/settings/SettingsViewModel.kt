@@ -13,9 +13,10 @@ import io.github.frankgrobbelaar.kendai.KendaiApplication
 import io.github.frankgrobbelaar.kendai.KendaiSettings
 import io.github.frankgrobbelaar.kendai.Theme
 import io.github.frankgrobbelaar.kendai.isOn
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -28,10 +29,13 @@ data class SettingsUiState(
     /** Dynamic colour needs Android 12; before that, Settings doesn't offer it. */
     val dynamicColorAvailable: Boolean = false,
     val version: String = "",
+    /** How many folders the library holds. */
+    val folders: Int = 0,
 )
 
 class SettingsViewModel(
     private val settings: KendaiSettings,
+    folders: Flow<List<String>>,
     einkScreen: Boolean,
     dynamicColorAvailable: Boolean,
     version: String,
@@ -47,8 +51,13 @@ class SettingsViewModel(
         )
 
     val state: StateFlow<SettingsUiState> =
-        settings.choices
-            .map { fixed.copy(choices = it, einkOn = it.einkMode.isOn(einkScreen)) }
+        combine(settings.choices, folders) { choices, folders ->
+                fixed.copy(
+                    choices = choices,
+                    einkOn = choices.einkMode.isOn(einkScreen),
+                    folders = folders.size,
+                )
+            }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_AFTER_MILLIS), fixed)
 
     fun setTheme(theme: Theme) {
@@ -72,6 +81,7 @@ class SettingsViewModel(
                 val container = (this[APPLICATION_KEY] as KendaiApplication).container
                 SettingsViewModel(
                     settings = container.settings,
+                    folders = container.library.folders,
                     einkScreen = container.einkScreen,
                     dynamicColorAvailable = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S,
                     version = BuildConfig.VERSION_NAME,

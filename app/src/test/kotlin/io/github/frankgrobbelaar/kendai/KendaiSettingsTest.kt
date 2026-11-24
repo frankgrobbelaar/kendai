@@ -26,4 +26,14 @@ class KendaiSettingsTest {
             settings.choices.first(),
         )
     }
+
+    @Test
+    fun `the folder view keeps its sort and its layout apart`() = runTest {
+        val settings = KendaiSettings(MemoryStore())
+
+        settings.setFoldersSort(SortBy.Author)
+        settings.setFoldersLayout(Layout.Covers)
+
+        assertEquals(SortAndView(SortBy.Author, Layout.Covers), settings.choices.first().folders)
+    }
 }

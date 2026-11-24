@@ -68,17 +68,36 @@ with progress and Cancel, and kept there; "Keep offline" pins it.
 
 ## The library
 
-- **Room** holds the books (fingerprint, details, kind, status, favourite, hidden, cover), their
-  copies (where, path, size, modified, last seen), the library's folders and hidden folders,
-  groups (with their parent, name, pinned and order), group memberships, places, bookmarks,
-  highlights with notes, and edited details.
-- **Finding books:** device folders are walked with `java.nio` and watched for changes; server
-  folders are listed when they're opened and on pulling down. Details and covers are read once per
-  fingerprint: the EPUB package, the PDF's info, FB2's description, Kindle EXTH records and comics'
-  `ComicInfo.xml`, falling back to the file name. Covers are drawn into the cache and shown with
-  Coil.
-- **Views are queries:** groups, folders, authors, series, kinds and statuses, with filters and
-  sorting done by Room, never during composition.
+- **Room** holds the books (fingerprint, details, kind, whether there's a cover, and a plain-text
+  guide's first lines), their copies (path, the library folder it was found in, size and modified
+  time) and the library's folders. Statuses, favourites, hidden books and folders, groups, places,
+  bookmarks, highlights and edited details join as their iterations land. Each version of the
+  schema is kept in `app/schemas`, so later ones can be migrated to.
+- **Finding books:** `Library` walks the device's folders with `java.nio` each time kendai opens and
+  when the list is pulled down, skipping hidden folders and the storage's `Android` folder. One
+  look runs at a time; asking during one queues one more, so a folder added meanwhile is never
+  missed. A file whose size and modified time haven't changed isn't read again, a gone one is
+  dropped, and a folder that can't be read, such as an SD card taken out, keeps what was found in
+  it. Server folders will be listed when they're opened and on pulling down.
+- **Details and covers** are read once per fingerprint: the EPUB package, FB2's description and
+  binary cover, a CBZ's `ComicInfo.xml` and first page, a PDF's first page drawn by Android's
+  renderer, a Markdown heading, an HTML title and a text guide's first lines, falling back to the
+  file name. Kindle EXTH records and the PDF's own details come with their readers. Covers are kept
+  as small JPEGs in kendai's files and shown with Coil.
+- **Views** are worked out from the library's books off the main thread, never during composition:
+  the folder view from the copies' paths, and the home page from Room's most recently added.
+- **Folders** are chosen in the first run from the ones at the top of the storage that hold books,
+  or anywhere with Android's folder picker, whose answer is turned back into a path. A folder inside
+  one the library holds isn't added twice, and one the library holds inside a new one gives way to
+  it.
+
+## Screens and navigation
+
+One activity. The first run shows until the library has folders; then the three places, each with
+its own Navigation 3 back stack, saved with the state of its screens and ViewModels. A screen opened
+from a place, such as Settings › Library folders, covers the bar or rail; back from a place's first
+screen goes to the library. The folder view's way down is the library screen's own state, so back
+goes up a folder before it leaves.
 
 ## Files
 

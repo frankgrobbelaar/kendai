@@ -22,9 +22,18 @@ import androidx.compose.ui.unit.dp
 import io.github.frankgrobbelaar.kendai.ui.theme.Washi
 import io.github.frankgrobbelaar.kendai.ui.theme.WashiCorners
 
-/** A place with nothing in it yet: an icon tile, what it is, and what will be here. */
+/**
+ * A place with nothing in it yet, or that can't show what it has: an icon tile, what it is, what
+ * will be here or what to do, and the [action] that does it.
+ */
 @Composable
-fun EmptyState(icon: ImageVector, title: String, body: String, modifier: Modifier = Modifier) {
+fun EmptyState(
+    icon: ImageVector,
+    title: String,
+    body: String,
+    modifier: Modifier = Modifier,
+    action: (@Composable () -> Unit)? = null,
+) {
     val colors = MaterialTheme.colorScheme
     Column(
         modifier = modifier.fillMaxSize().padding(horizontal = 32.dp),
@@ -58,5 +67,9 @@ fun EmptyState(icon: ImageVector, title: String, body: String, modifier: Modifie
             color = colors.onSurfaceVariant,
             textAlign = TextAlign.Center,
         )
+        if (action != null) {
+            Spacer(Modifier.height(24.dp))
+            action()
+        }
     }
 }
