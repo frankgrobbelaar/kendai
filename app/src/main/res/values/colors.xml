@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Washi's paper, shown before the first frame. -->
+    <color name="window">#F5EFE4</color>
+    <!-- The seal behind the launcher icon. -->
+    <color name="ic_launcher_background">#A9402B</color>
+</resources>

@@ -118,8 +118,7 @@ Decided with the owner on 2026-11-24:
 
 ## Commands
 
-The Android project comes in iteration 1. From then on, run from the repo root (details will be in
-`docs/development.md`):
+Run from the repo root (details in [docs/development.md](docs/development.md)):
 
 - `./gradlew check assembleDebug`: every check CI runs (Spotless, detekt, Android Lint, unit tests)
   and a debug build. It must pass before every push.

@@ -36,8 +36,9 @@ encrypted. Besides your own servers, kendai only talks to GitHub.
 
 ## Status
 
-Being designed. The [spec](docs/spec.md), the [architecture](docs/architecture.md) and the
-[plan](docs/plan.md) are in [docs/](docs/README.md). Kendai will be shared the way tansu is: not
+Being built in iterations, tracked in [docs/plan.md](docs/plan.md); the
+[spec](docs/spec.md), the [architecture](docs/architecture.md) and the [design](docs/design.md)
+are in [docs/](docs/README.md). Kendai will be shared the way tansu is: not
 on any store, on purpose, with a downloads page that explains installing it.
 
 ## License

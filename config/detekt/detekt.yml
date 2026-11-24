@@ -1,0 +1,38 @@
+# Changes on top of detekt's defaults and compose-rules' defaults (buildUponDefaultConfig).
+# Any issue fails the build: there is no baseline.
+
+complexity:
+  TooManyFunctions:
+    # A screen's ViewModel has one small function per thing the user can do there; private
+    # helpers don't add to what it offers.
+    ignorePrivate: true
+    allowedFunctionsPerClass: 31
+  LongParameterList:
+    # Composables take a modifier and optional parameters by design.
+    ignoreDefaultParameters: true
+    ignoreAnnotated: ['Composable']
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']
+
+style:
+  MagicNumber:
+    # Sizes and colours in UI code are the design's values, named by where they're used.
+    ignoreAnnotated: ['Composable', 'Preview']
+    # An enum entry names its values, as in Smb(445).
+    ignoreEnums: true
+    excludes:
+      - '**/test/**'
+      - '**/*.kts'
+      - '**/ui/theme/**'
+  UnusedPrivateFunction:
+    ignoreAnnotated: ['Preview']
+  ReturnCount:
+    excludeGuardClauses: true
+
+Compose:
+  CompositionLocalAllowlist:
+    # Whether e-ink mode is on: the kit draws its rules and colours from it, and nothing else in
+    # Material's theme can say so.
+    allowedCompositionLocals: LocalEink

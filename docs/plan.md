@@ -13,7 +13,7 @@ lands on `main`:
 | # | Iteration | What it delivers | Status |
 | --- | --- | --- | --- |
 | 0 | Design | Three design languages to choose from, then the chosen one and every workflow on the design canvas | Done: Washi, the kit and all twelve workflows, in [design.md](design.md) and [design/](design/README.md) |
-| 1 | Foundation | The Gradle project, linting and formatting, CI, the theme, and the app shell, with phone, tablet and e-ink layouts | |
+| 1 | Foundation | The Gradle project, linting and formatting, CI, the theme, and the app shell, with phone, tablet and e-ink layouts | Done |
 | 2 | The library on the device | All files access, picking folders, finding books, their details and covers, the home page, list and grid | |
 | 3 | Reading EPUB | Readium, the place saved as you read, contents, appearance, pages or scrolling | |
 | 4 | PDF and comics | PDFium with zoom, fit and spreads; CBZ, CBR, CB7 and CBT | |
